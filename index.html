@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shinchan - Shiro and the Coal Town | Fan Homepage</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', 'Arial', sans-serif;
+            background: #fef7e0;
+            color: #2c2b28;
+            line-height: 1.5;
+            padding: 30px 20px;
+        }
+        .page-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+            padding: 2rem 2rem 2rem 2rem;
+        }
+        .center-text {
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            color: #d35400;
+            margin-top: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+        .availability {
+            text-align: center;
+            font-weight: bold;
+            background: #fff0d6;
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 40px;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        h2 {
+            font-size: 1.8rem;
+            color: #c4450c;
+            margin: 1.8rem 0 1rem 0;
+            border-left: 8px solid #f39c12;
+            padding-left: 18px;
+        }
+        .characters-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0 1rem;
+        }
+        .character-item {
+            flex: 1 1 200px;
+            min-width: 180px;
+            text-align: center;
+            background: #fffaf2;
+            border-radius: 32px;
+            padding: 1rem 0.8rem;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .character-item:hover {
+            transform: translateY(-5px);
+        }
+        .character-item img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: #ffe0b5;
+            padding: 5px;
+            border: 2px solid #ffbc6e;
+        }
+        .character-name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin: 12px 0 6px;
+            color: #a23b00;
+        }
+        .character-desc {
+            font-size: 0.85rem;
+            color: #5e3a1f;
+            padding: 0 6px;
+        }
+        /* 视频区域样式 */
+        .video-section {
+            background: #fff7ec;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .video-section h3 {
+            color: #c4450c;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        .video-container video {
+            max-width: 100%;
+            border-radius: 24px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 3px solid #ffbc6e;
+        }
+        .favorite-section {
+            background: #fff7ec;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin: 2rem 0;
+        }
+        .form-row {
+            margin-bottom: 1.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: baseline;
+            gap: 12px;
+        }
+        .form-row label {
+            width: 200px;
+            font-weight: 600;
+            color: #5a2e0e;
+        }
+        .radio-group {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .radio-group label {
+            width: auto;
+            font-weight: normal;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: 48px;
+            border: 1px solid #e7bc7e;
+            background: white;
+            font-family: inherit;
+            font-size: 0.95rem;
+            min-width: 200px;
+        }
+        textarea {
+            border-radius: 24px;
+            resize: vertical;
+        }
+        button, .submit-btn {
+            background: #e67e22;
+            border: none;
+            padding: 10px 28px;
+            border-radius: 60px;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        button:hover {
+            background: #c0392b;
+            transform: scale(1.02);
+        }
+        footer {
+            margin-top: 2.8rem;
+            text-align: center;
+            font-size: 0.85rem;
+            border-top: 1px solid #ffe0b5;
+            padding-top: 1.6rem;
+            color: #6b4c2c;
+        }
+        @media (max-width: 700px) {
+            .page-container {
+                padding: 1.2rem;
+            }
+            .form-row label {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-container">
+    <!-- 顶部标题区域 -->
+    <div class="center-text">
+        <p style="font-size: 0.9rem; color: #c45c1a; letter-spacing: 1px;">✨ Shinchan: Shiro and the Coal Town ✨</p>
+        <h1>Shinchan: Shiro and the Coal Town</h1>
+        <div class="availability">
+            🎮 Available on: Nintendo Switch and Windows PC
+        </div>
+        <h2 style="text-align: center; border-left: none; border-bottom: 3px solid #ffbb77; display: inline-block; padding: 0 0 8px 0; margin-top: 0.5rem;">The Characters</h2>
+    </div>
+
+    <!-- 角色网格 -->
+    <div class="characters-grid">
+        <!-- Shinchan -->
+        <div class="character-item">
+            <img src="assets/character-shinchan.png" alt="Shinchan Nohara">
+            <div class="character-name">Shinnosuke Nohara <span style="font-size:0.8rem;">(Shinchan)</span></div>
+            <div class="character-desc">The mischievous 5-year-old protagonist known for his hilarious antics and love of choco chips.</div>
+        </div>
+        <!-- Misae -->
+        <div class="character-item">
+            <img src="assets/character-misae.webp" alt="Misae Nohara">
+            <div class="character-name">Misae Nohara <span style="font-size:0.8rem;">(Mom)</span></div>
+            <div class="character-desc">Shinchan's short-tempered but loving mother, always trying to keep him in line.</div>
+        </div>
+        <!-- Hiroshi -->
+        <div class="character-item">
+            <img src="assets/character-hiroshi.webp" alt="Hiroshi Nohara">
+            <div class="character-name">Hiroshi Nohara <span style="font-size:0.8rem;">(Dad)</span></div>
+            <div class="character-desc">The laid-back father who works at a company and enjoys his evening beer.</div>
+        </div>
+        <!-- Himawari -->
+        <div class="character-item">
+            <img src="assets/character-himawari.png" alt="Himawari Nohara">
+            <div class="character-name">Himawari <span style="font-size:0.8rem;">(Sister)</span></div>
+            <div class="character-desc">The youngest of the Noharas. Loves shiny objects and brand-name goods.</div>
+        </div>
+        <!-- Shiro -->
+        <div class="character-item">
+            <img src="assets/character-shiro.png" alt="Shiro the dog">
+            <div class="character-name">Yukino Nohara <span style="font-size:0.8rem;">(Shiro)</span></div>
+            <div class="character-desc">The family dog — small, fluffy, and sometimes the most sensible member.</div>
+        </div>
+        <!-- Toru Kazama -->
+        <div class="character-item">
+            <img src="assets/character-toru-kazama.webp" alt="Toru Kazama">
+            <div class="character-name">Toru Kazama</div>
+            <div class="character-desc">The smart and responsible friend of Shinchan, often the voice of reason.</div>
+        </div>
+    </div>
+
+    <!-- ========= 视频区域（已恢复） ========= -->
+    <div class="video-section">
+        <h3>🎬 Movie Trailer: Shinchan and the Coal Town</h3>
+        <div class="video-container">
+            <video controls poster="assets/shinchan-coal-town-poster.jpg" width="100%" style="max-width: 600px;">
+                <source src="assets/shinchan-and-the-coal-town.mp4" type="video/mp4">
+                Your browser does not support the video tag. Watch the exciting Shinchan movie trailer!
+            </video>
+        </div>
+        <p style="margin-top: 12px; color: #b45f2b;">✨ Watch the official trailer for the latest adventure! ✨</p>
+    </div>
+
+    <!-- ========= Who's your favorite? 区域 ========= -->
+    <div class="favorite-section">
+        <h2 style="margin-top: 0; border-left-color: #f1a23d;">⭐ Who's your favorite?</h2>
+        
+        <div class="form-row">
+            <label>Who's your favorite character?</label>
+            <div class="radio-group">
+                <input type="radio" id="fav_shinchan" name="fav_character" value="Shinchan" checked>
+                <label for="fav_shinchan">Shinchan</label>
+                <input type="radio" id="fav_misae" name="fav_character" value="Misae">
+                <label for="fav_misae">Misae</label>
+                <input type="radio" id="fav_hiroshi" name="fav_character" value="Hiroshi">
+                <label for="fav_hiroshi">Hiroshi</label>
+                <input type="radio" id="fav_himawari" name="fav_character" value="Himawari">
+                <label for="fav_himawari">Himawari</label>
+                <input type="radio" id="fav_shiro" name="fav_character" value="Shiro">
+                <label for="fav_shiro">Shiro</label>
+                <input type="radio" id="fav_kazama" name="fav_character" value="Kazama">
+                <label for="fav_kazama">Kazama</label>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <label>Character not in the list? <br> Write their name below:</label>
+            <input type="text" id="otherCharacterName" placeholder="e.g., Action Bastard, Masao, etc.">
+        </div>
+        
+        <div class="form-row">
+            <label>Why do you like this character?</label>
+            <textarea id="likeReason" rows="2" placeholder="Tell us why this character is amazing..."></textarea>
+        </div>
+    </div>
+
+    <!-- ========= Tell us about yourself 区域 ========= -->
+    <div style="margin: 2rem 0 1rem 0;">
+        <h2>📋 Tell us a bit more about yourself</h2>
+    </div>
+    
+    <form id="userInfoForm" onsubmit="event.preventDefault(); validateAndSubmit();">
+        <div class="form-row">
+            <label for="username">Your Name:</label>
+            <input type="text" id="username" placeholder="Enter your name" required>
+        </div>
+        
+        <div class="form-row">
+            <label>Your Gender:</label>
+            <div class="radio-group">
+                <input type="radio" id="gender_male" name="user_gender" value="Male">
+                <label for="gender_male">Male</label>
+                <input type="radio" id="gender_female" name="user_gender" value="Female">
+                <label for="gender_female">Female</label>
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <label for="dob">Your Date of Birth:</label>
+            <input type="date" id="dob">
+            <span style="font-size:0.75rem; color:#b97f3a;">&nbsp; (dd.mm.yyyy)</span>
+        </div>
+        
+        <div class="form-row">
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+        </div>
+        
+        <div class="form-row">
+            <label></label>
+            <button type="submit" class="submit-btn">Submit</button>
+            <span id="formFeedbackMsg" style="margin-left: 15px; color: #2a6b2f; font-size:0.9rem;"></span>
+        </div>
+    </form>
+    
+    <footer>
+        <p>© 2025 Programming4</p>
+        <p>Get in touch with us: <a href="mailto:shinnchan-lovers@justlearninghtml.com" style="color:#e67e22; text-decoration:none;">shinnchan-lovers@justlearninghtml.com</a></p>
+        <p style="margin-top: 8px;">🌸 春日部防卫队 | Kasukabe Defense Force 🌸</p>
+    </footer>
+</div>
+
+<script>
+    function validateAndSubmit() {
+        const feedbackSpan = document.getElementById('formFeedbackMsg');
+        feedbackSpan.style.color = "#2a6b2f";
+        
+        const userName = document.getElementById('username').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const genderRadios = document.getElementsByName('user_gender');
+        let genderSelected = false;
+        let selectedGender = "";
+        for(let i = 0; i < genderRadios.length; i++) {
+            if(genderRadios[i].checked) {
+                genderSelected = true;
+                selectedGender = genderRadios[i].value;
+                break;
+            }
+        }
+        const dob = document.getElementById('dob').value;
+        
+        let favCharSelected = "";
+        const favRadios = document.getElementsByName('fav_character');
+        for(let i=0; i<favRadios.length; i++) {
+            if(favRadios[i].checked) {
+                favCharSelected = favRadios[i].value;
+                break;
+            }
+        }
+        const otherChar = document.getElementById('otherCharacterName').value.trim();
+        const likeReason = document.getElementById('likeReason').value.trim();
+        
+        if(userName === "") {
+            feedbackSpan.style.color = "#c0392b";
+            feedbackSpan.innerText = "⚠️ Please enter your name.";
+            return false;
+        }
+        if(email === "") {
+            feedbackSpan.style.color = "#c0392b";
+            feedbackSpan.innerText = "⚠️ Email address is required.";
+            return false;
+        }
+        if(!email.includes("@") || !email.includes(".")) {
+            feedbackSpan.style.color = "#c0392b";
+            feedbackSpan.innerText = "⚠️ Please enter a valid email address.";
+            return false;
+        }
+        if(!genderSelected) {
+            feedbackSpan.style.color = "#c0392b";
+            feedbackSpan.innerText = "⚠️ Please select your gender (Male or Female).";
+            return false;
+        }
+        
+        let finalFavorite = favCharSelected;
+        if(otherChar !== "") {
+            finalFavorite += ` (plus other: ${otherChar})`;
+        }
+        let reasonText = likeReason === "" ? "No reason provided, but we love Shinchan anyway!" : likeReason;
+        
+        feedbackSpan.innerHTML = `✅ Thanks ${userName}! Your favorite character: ${finalFavorite}. ${reasonText.substring(0, 60)}${reasonText.length>60?'...':''} We'll send updates to ${email}.`;
+        
+        console.log(`Form submitted: Name=${userName}, Gender=${selectedGender}, Email=${email}, DOB=${dob || 'not provided'}, Fav=${favCharSelected}, Other=${otherChar}, Reason=${likeReason}`);
+        
+        return true;
+    }
+</script>
+</body>
+</html>
